@@ -1,0 +1,10 @@
+34428347,Anna Johnson,anna.j@example.com,555-1234,Sales
+55839283,Bob Williams,bob.w@example.com,555-5678,Support
+44782930,Carol Lee,carol.l@example.com,555-8765,Marketing
+98745612,David Brown,david.b@example.com,555-4321,Finance
+23456789,Eva Green,eva.g@example.com,555-6789,Operations
+65748392,Frank Harris,frank.h@example.com,555-3456,IT
+39485721,Grace Kim,grace.k@example.com,555-9876,Customer Service
+83947563,Henry Turner,henry.t@example.com,555-2345,R&D
+49283756,Ivy Nelson,ivy.n@example.com,555-8764,Legal
+38572049,Jack Cooper,jack.c@example.com,555-5432,Administration

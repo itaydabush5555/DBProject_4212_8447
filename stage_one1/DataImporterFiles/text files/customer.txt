@@ -1,0 +1,10 @@
+12134353,England,056767968,aad@gmail.com,32 Farrow Street,Ministry of Defence,34428347
+23894729,USA,1234567890,john.doe@example.com,123 Main St,Tech Solutions,55839283
+87432904,Canada,0987654321,jane.smith@domain.com,456 Elm St,Health Services,44782930
+56290837,Australia,1122334455,bruce.wayne@batmail.com,789 Pine St,Finance Corp,98745612
+34789012,Germany,9988776655,hans.gruber@villains.com,321 Oak St,Industrial Inc,23456789
+90875634,France,5566778899,michel.dubois@exemple.fr,654 Maple St,Energy Systems,65748392
+67983245,Japan,4433221100,sakura.tanaka@jpmail.com,987 Cedar St,Automotive,39485721
+45329087,India,6677889900,rahul.sharma@india.co,159 Spruce St,IT Solutions,83947563
+12983475,Brazil,7788996655,marcelo.santos@brmail.com,753 Palm St,Telecom Services,49283756
+76348219,Italy,3344556677,giovanni.rossi@itmail.it,852 Olive St,Construction,38572049
