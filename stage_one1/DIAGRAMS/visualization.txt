@@ -1,1 +1,0 @@
-DDS, ERD, visualization of the tables
