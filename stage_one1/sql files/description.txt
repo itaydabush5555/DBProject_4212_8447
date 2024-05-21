@@ -1,5 +1,0 @@
-you could find here:
-create tables sql file
-drop tables sql file
-insert tables sql file
-select all sql file
