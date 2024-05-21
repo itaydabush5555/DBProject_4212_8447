@@ -1,0 +1,10 @@
+2001,Widget,Electronics,25.00,Compact and versatile,100
+2002,Gadget,Electronics,50.00,High-tech and durable,200
+2003,Thingamajig,Home Goods,15.00,Useful for everyday tasks,300
+2004,Doohickey,Automotive,75.00,Innovative and practical,150
+2005,Gizmo,Health,100.00,Advanced medical device,80
+2006,Contraption,Industrial,200.00,Heavy-duty equipment,60
+2007,Device,IT,150.00,High performance,120
+2008,Apparatus,Construction,500.00,Rugged and reliable,50
+2009,Instrument,Music,300.00,High fidelity,70
+2010,Tool,Gardening,40.00,Ergonomic and efficient,90
