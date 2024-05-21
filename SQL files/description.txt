@@ -1,6 +1,0 @@
-in this folder you could find:
-create table sql file
-drop table sql file
-insert tables sql file
-select all sql file
-  
