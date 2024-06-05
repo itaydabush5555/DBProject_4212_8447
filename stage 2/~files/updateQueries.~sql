@@ -1,0 +1,20 @@
+----עדכון סטטוס הזמנה
+UPDATE AIR_ORDER
+SET Status = 'Shipped', DeliveryDate = SYSDATE
+WHERE ORDERID = 61102235;
+commit;
+
+---עדכון מחיר של מוצר לפי קטגוריה
+UPDATE PRODUCT
+SET Price = Price * 1.10
+WHERE PRODUCT.CATEGORY = 'Defense Systems';
+commit;
+
+----עדכון סטטוס של כרטיסי תמיכה פתוחים שנפתחו לפני יותר מחודש
+UPDATE SUPPORT_TICKET
+SET Status = 'Pending Review'
+WHERE Status = 'Open' AND CreatedDate < ADD_MONTHS(SYSDATE, -1);
+commit;
+
+
+

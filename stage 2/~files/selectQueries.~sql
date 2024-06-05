@@ -1,0 +1,53 @@
+----שאילתה 1: רשימת ההזמנות של לקוח כולל פרטי המוצרים שהוזמנו
+
+SELECT o.OrderID, o.OrderDate, o.DeliveryDate, c.Name AS CustomerName, p.Name AS ProductName, p.Category, p.Price
+FROM AIR_ORDER o
+JOIN CUSTOMERS c ON o.CustomerID = c.CustomerID
+JOIN PART_OF pot ON o.OrderID = pot.OrderID
+JOIN PRODUCT p ON pot.ProductID = p.ProductID
+ORDER BY o.OrderDate DESC;
+
+---סיכום תשלומים ללקוח כולל פרטי מנהל החשבון
+SELECT c.Name AS CustomerName, am.Name AS AccountManagerName, SUM(p.Amount) AS TotalPayments
+FROM CUSTOMERS c
+JOIN ACCOUNT_MANAGER am ON c.AccountManagerID = am.AccountManagerID
+JOIN AIR_ORDER o ON c.CustomerID = o.CustomerID
+JOIN PAYMENT p ON o.OrderID = p.OrderID
+GROUP BY c.Name, am.Name
+ORDER BY TotalPayments DESC;
+
+-----כרטיסי תמיכה פתוחים עם פרטי הלקוחות ומנהלי החשבון
+
+SELECT st.TicketID, c.Name AS CustomerName, am.Name AS AccountManagerName, st.IssueDescription, st.CreatedDate
+FROM SUPPORT_TICKET st
+JOIN CUSTOMERS c ON st.CustomerID = c.CustomerID
+JOIN ACCOUNT_MANAGER am ON st.AccountManagerID = am.AccountManagerID
+WHERE st.Status = 'Open'
+ORDER BY st.CreatedDate;
+
+----מלאי מוצרים נמוך לפי קטגוריה- פחות מ10 פריטים
+
+SELECT p.Category, p.Name AS ProductName, p.InventoryCount
+FROM PRODUCT p
+WHERE p.InventoryCount < 10
+ORDER BY p.InventoryCount ASC, p.Category;
+
+
+-----דוח הכנסות לפי חודש ולקוח
+
+SELECT TO_CHAR(p.PaymentDate, 'YYYY-MM') AS Month, c.Name AS CustomerName, SUM(p.Amount) AS TotalIncome
+FROM PAYMENT p
+JOIN AIR_ORDER o ON p.OrderID = o.OrderID
+JOIN CUSTOMERS c ON o.CustomerID = c.CustomerID
+GROUP BY TO_CHAR(p.PaymentDate, 'YYYY-MM'), c.Name
+ORDER BY Month DESC, TotalIncome DESC;
+
+-----מציאת הלקוחות עם מספר ההזמנות הגבוה ביותר
+
+SELECT c.Name AS CustomerName, COUNT(o.OrderID) AS OrderCount
+FROM CUSTOMERS c
+JOIN AIR_ORDER o ON c.CustomerID = o.CustomerID
+GROUP BY c.Name
+ORDER BY OrderCount DESC, c.Name;
+
+

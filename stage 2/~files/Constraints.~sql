@@ -1,0 +1,15 @@
+-- Constraints
+
+ALTER TABLE PRODUCT
+ADD CONSTRAINT chck_pricePositive CHECK (Price > 0);
+
+ALTER TABLE PAYMENT
+MODIFY (PaymentMethod DEFAULT 'Credit Card');
+
+-- Additional Constraints
+
+ALTER TABLE AIR_ORDER
+ADD CONSTRAINT chck_total_amount CHECK (TotalAmount >= 0);
+
+ALTER TABLE SUPPORT_TICKET
+ADD CONSTRAINT chek_dates CHECK (ResolvedDate IS NULL OR ResolvedDate > CreatedDate);

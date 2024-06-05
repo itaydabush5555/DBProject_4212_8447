@@ -1,0 +1,21 @@
+
+-----מחיקת כרטיסי תמיכה סגורים שמאוחסנים מעל שנה
+DELETE FROM SUPPORT_TICKET
+WHERE Status = 'Closed' AND ResolvedDate < ADD_MONTHS(SYSDATE, -12);
+
+----- מחיקת הזמנות של לקוח ספציפי
+DELETE FROM PAYMENT
+WHERE OrderID IN (SELECT OrderID FROM AIR_ORDER WHERE CustomerID IN (SELECT CustomerID FROM CUSTOMERS WHERE Name = 'Japan'));
+
+DELETE FROM AIR_ORDER
+WHERE CustomerID IN (SELECT CustomerID FROM CUSTOMERS WHERE Name = 'Japan');
+
+
+
+----מחיקת הזמנות לא פעילות (סטטוס 'Cancelled')
+DELETE FROM AIR_ORDER
+WHERE Status = 'Cancelled';
+
+-----מחיקת מוצרים עם מלאי אפסי
+DELETE FROM PRODUCT
+WHERE InventoryCount = 0;

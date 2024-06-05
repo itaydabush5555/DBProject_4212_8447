@@ -1,0 +1,48 @@
+-- Query 1: Search for Customers by Name
+-- This query allows the user to search for customers based on a partial name match.
+-- Options Used: name, hint, type, required.
+-- Usage: Enter a part of the customer's name when prompted.
+SELECT * 
+FROM Customers 
+WHERE Name LIKE '%' || &<name="customer_name" hint="Enter the customer's name" type="string" required="true"> || '%'
+/
+-- End of Query 1
+
+
+
+-- Query 2: Orders Placed After a Certain Date
+-- This query retrieves orders that were placed after a specified date.
+-- Options Used: name, hint, type, required.
+-- Usage: Enter the date in DD/MM/YYYY format when prompted.
+SELECT t.* 
+FROM AIR_ORDER t 
+WHERE OrderDate > TO_DATE('&<name="order_date" hint ="Enter the order date in DD/MM/YYYY format">' , 'DD/MM/YYYY')
+/
+-- End of Query 2
+
+
+
+
+-- Query 3: Filter Orders by Status with Default Value
+-- This query retrieves orders based on their status, with a default value of 'Pending'.
+-- Options Used: name, hint, type, default.
+-- Usage: Enter the order status or leave it blank to use the default value.
+SELECT l.* 
+FROM AIR_ORDER l 
+WHERE l.Status = &<name="order_status" hint="Enter the order status" default="Pending" type ="STRING">
+ORDER BY OrderDate;
+/
+-- End of Query 3
+
+
+-- Query 4: Customers Sorting by Name with Checkbox for Descending Order
+-- This query retrieves customers sorted by their name, with an option to sort in descending order.
+-- Options Used: name, checkbox.
+-- Usage: Check the box if you want the sort order to be descending.
+SELECT * 
+FROM Customers c
+ORDER BY c.Name &<name="Descending_sort_order" checkbox="DESC, ASC" hint="Check for descending sort order">
+/
+
+
+
